@@ -332,6 +332,7 @@ commands:
                         results/0/output.xml
                     mkdir ../00_robot_results
                     cp results/0/* ../00_robot_results/
+                when: always
 
             
     cache-out-fhirbridge-m2-dependencies:
@@ -370,7 +371,8 @@ commands:
         steps:
             - add_ssh_keys:
                   fingerprints:
-                      - 0c:dd:08:d5:13:cf:20:3c:25:c4:f3:59:a8:a5:c4:36
+                    #   - 0c:dd:08:d5:13:cf:20:3c:25:c4:f3:59:a8:a5:c4:36
+                      - 1d:d2:2c:6b:bd:1f:c6:be:ee:e6:18:53:9a:67:f2:7d
             - run:
                   name: Configure GIT
                   command: |
