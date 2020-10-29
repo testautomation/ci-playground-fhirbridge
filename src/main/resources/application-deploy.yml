@@ -1,0 +1,11 @@
+
+ehrbase:
+  address: ${EHRBASE_HOST}
+  port: ${EHRBASE_PORT}
+  path: ${EHRBASE_CONTEXT_PATH}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATABASE_SERVER}/${DATABASE_NAME}?currentSchema=num
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}

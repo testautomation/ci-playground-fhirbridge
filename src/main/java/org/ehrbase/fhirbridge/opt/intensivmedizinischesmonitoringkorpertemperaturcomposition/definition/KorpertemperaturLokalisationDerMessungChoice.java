@@ -1,0 +1,4 @@
+package org.ehrbase.fhirbridge.opt.intensivmedizinischesmonitoringkorpertemperaturcomposition.definition;
+
+public interface KorpertemperaturLokalisationDerMessungChoice {
+}

@@ -1,0 +1,27 @@
+.idea
+*.iml
+
+target
+
+*-local.yml
+lucene
+
+# VSCode editor settings
+.vscode
+.classpath
+.factorypath
+.project
+.settings
+org.eclipse*
+
+
+# Python
+venv
+*.venv
+
+# Robot Framework
+tests/results
+
+
+# unknown
+lucene

@@ -1,0 +1,17 @@
+archetype_id,path,rm_type,aom_type,node_id,name_de
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/,EVALUATION,CComplexObject,at0000,Kennzeichnung Erregernachweis
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001],ITEM_TREE,CComplexObject,at0001,Baum
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0005],ELEMENT,CComplexObject,at0005,Erregernachweis
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0005]/value,DV_BOOLEAN,CComplexObject
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0011],ELEMENT,CComplexObject,at0011,Erregernachweis in der Klinik
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0011]/value,DV_BOOLEAN,CComplexObject
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0012],ELEMENT,CComplexObject,at0012,Erregername
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0012]/value,DV_TEXT,CComplexObject
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0013],ELEMENT,CComplexObject,at0013,Hinweistext
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0013]/value,DV_TEXT,CComplexObject
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0015],ELEMENT,CComplexObject,at0015,Zeitpunkt der Kennzeichnung
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/data[at0001]/items[at0015]/value,DV_DATE_TIME,CComplexObject
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/protocol[at0003],ITEM_TREE,CComplexObject,at0003,Baum
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/protocol[at0003]/items[at0004],ELEMENT,CComplexObject,at0004,Zuletzt aktualisiert
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/protocol[at0003]/items[at0004]/value,DV_DATE_TIME,CComplexObject
+openEHR-EHR-EVALUATION.flag_pathogen.v0,/protocol[at0003]/items[at0007],CLUSTER,ArchetypeSlot,at0007,Erweiterung

@@ -1,0 +1,7 @@
+logging:
+  level:
+    ca.uhn.fhir: info
+    org.ehrbase.fhirbridge: debug
+    org.hibernate: info
+    org.hl7.fhir: info
+    org.springframework: info

@@ -1,0 +1,35 @@
+ehrbase:
+  address: localhost
+  port: 8080
+  path: /ehrbase/rest/openehr/v1/
+fhir-bridge:
+  fhir:
+    narrative-generation: false
+    url-mapping: /fhir/*
+    validation:
+      terminology:
+        mode: off
+logging:
+  level:
+    ca.uhn.fhir: warn
+    org.ehrbase.fhirbridge: info
+    org.hibernate: warn
+    org.hl7.fhir: warn
+    org.quartz: warn
+    org.springframework: warn
+server:
+  servlet:
+    context-path: /fhir-bridge
+  port: 8888
+spring:
+  batch:
+    job:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate.search.lucene_version: LUCENE_CURRENT
+      hibernate.search.default.indexBase: ./lucene
+      hibernate.search.model_mapping: ca.uhn.fhir.jpa.search.LuceneSearchMappingFactory

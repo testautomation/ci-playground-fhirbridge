@@ -1,0 +1,7 @@
+archetype_id,path,rm_type,aom_type,node_id,name_de,name_en
+openEHR-EHR-CLUSTER.etiology.v1,/,CLUSTER,CComplexObject,at0000,Ätiopathogenese,Etiology
+openEHR-EHR-CLUSTER.etiology.v1,/items[at0001],ELEMENT,CComplexObject,at0001,Ätiologie der Krankheit,The etiology of the disease
+openEHR-EHR-CLUSTER.etiology.v1,/items[at0001]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.etiology.v1,/items[at0001]/value/defining_code,CODE_PHRASE,CCodePhrase
+openEHR-EHR-CLUSTER.etiology.v1,/items[at0017],ELEMENT,CComplexObject,at0017,Beschreibung des Entstehens,*New element(en)
+openEHR-EHR-CLUSTER.etiology.v1,/items[at0017]/value,DV_TEXT,CComplexObject

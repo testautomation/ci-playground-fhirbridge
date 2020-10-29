@@ -1,0 +1,47 @@
+archetype_id,path,rm_type,aom_type,node_id,name_de,name_nb,name_pt-br,name_ar-sy,name_en
+openEHR-EHR-CLUSTER.specimen.v1,/,CLUSTER,CComplexObject,at0000,Probe,Prøvemateriale,Espécime,العينة,Specimen
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0001],ELEMENT,CComplexObject,at0001,Laborprobenidentifikator,Laboratoriets identifikator,Identificador laboratorial do espécime,*Laboratory Specimen Identifier(en),Laboratory specimen identifier
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0001]/value,DV_IDENTIFIER,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0003],ELEMENT,CComplexObject,at0003,Identifikator der übergeordneten Probe,Identifikator av overordnet prøve,Identificador de origem do espécime,*Parent Specimen Identifier(en),Parent specimen identifier
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0003]/value,DV_IDENTIFIER,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0005],ELEMENT,CComplexObject,at0005,Gefahrenhinweis,Risikovarsel,*Hazard warning (en),*Hazard warning (en),Hazard warning
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0005]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0007],ELEMENT,CComplexObject,at0007,Probenentnahmemethode,Prøvetakingsmetode,Método de coleta,*Collection Method(en),Collection method
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0007]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0008],ELEMENT,CComplexObject,at0008,Probenahme Bedingung,Prøvetakingsforhold,*Sampling context (en),*Sampling context (en),Sampling context
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0008]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0013],CLUSTER,ArchetypeSlot,at0013,Anatomische Probenentnahmestelle,Strukturert anatomisk lokalisering,*Structured source site (en),*Structured source site (en),Structured source site
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0015],ELEMENT,CComplexObject,at0015,Zeitpunkt der Probenentnahme,Dato/tid for prøvetaking,*Collection date/time (en),*Collection date/time (en),Collection date/time
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0015]/value,DV_INTERVAL<DV_DATE_TIME>,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0027],CLUSTER,ArchetypeSlot,at0027,Physische Eigenschaften,Fysiske egenskaper,Propriedades físicas,*Physical properties(en),Physical properties
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0029],ELEMENT,CComplexObject,at0029,Probenart,Type prøvemateriale,Tipo de espécime,*Specimen Type(en),Specimen type
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0029]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0034],ELEMENT,CComplexObject,at0034,Zeitpunkt des Probeneingangs,Dato/tid for mottak,*Date/time received (en),*Date/time received (en),Date/time received
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0034]/value,DV_DATE_TIME,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0041],ELEMENT,CComplexObject,at0041,Eignung zum Testen,Analyserbarhet,Adequação para teste,المناسبة لإتمام التحليل,Adequacy for testing
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0041]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0041]/value/defining_code,CODE_PHRASE,CCodePhrase
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0042],ELEMENT,CComplexObject,at0042,Qualitätsmangel der Probe,Kvalitetsproblem,*Specimen quality issue (en),*Specimen quality issue (en),Specimen quality issue
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0042]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0042]/value/defining_code,CODE_PHRASE,CCodePhrase
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0045],ELEMENT,CComplexObject,at0045,Kommentar,Kommentar,Comentário,تعليق,Comment
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0045]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0067],ELEMENT,CComplexObject,at0067,Vorgaben zur Probennahme,Prøvetakingsomgivelser,Contexto da coleta,*Collection Setting(en),Collection setting
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0067]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0068],CLUSTER,ArchetypeSlot,at0068,Angaben zur Verarbeitung,Prosesseringsdetaljer,Detalhes do processamento,*Additional Preparation(en),Processing details
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0070],ELEMENT,CComplexObject,at0070,Identifikator des Probennehmers,Prøvetakers ID,Identificador do coletor do espécime,*Specimen Collector Identifier(en),Specimen collector identifier
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0070]/value,DV_IDENTIFIER,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0071],CLUSTER,ArchetypeSlot,at0071,Angaben zum Probennehmer,Detaljer om prøvetaker,Detalhes do coletor do espécime,*Specimen Collector Details(en),Specimen collector details
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0079],ELEMENT,CComplexObject,at0079,Kommentar des Probennehmers,Beskrivelse av prøvetaking,*Collection description (en),*Collection description (en),Collection description
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0079]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0080],ELEMENT,CComplexObject,at0080,Anzahl der Behälter,Antall beholdere,Número de recipientes,*Number of Containers(en),Number of containers
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0080]/value,DV_COUNT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0080]/value/magnitude,Integer,CPrimitiveObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0083],CLUSTER,ArchetypeSlot,at0083,Zusätzliche Angaben zur Probennahme,Ytterlige detaljer om prøvetakingsmetode,Detalhes adicionais da coleta,*Additional Collection Details(en),Additional collection details
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0085],CLUSTER,ArchetypeSlot,at0085,Behälter Details,Detaljer om beholder,Detalhes do recipiente,*Container Details(en),Container details
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0087],ELEMENT,CComplexObject,at0087,Probenentnahmestelle,Opprinnelsessted,*Source site (en),*Source site (en),Source site
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0087]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0088],ELEMENT,CComplexObject,at0088,Externer Identifikator,Ekstern identifikator,*External identifier (en),*External identifier (en),External identifier
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0088]/value,DV_IDENTIFIER,CComplexObject
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0093],CLUSTER,ArchetypeSlot,at0093,Angaben zum Transport,Transportdetaljer,*Transport details (en),*Transport details (en),Transport details
+openEHR-EHR-CLUSTER.specimen.v1,/items[at0096],CLUSTER,ArchetypeSlot,at0096,Digitale Darstellung,Digital representasjon,*Digital representation (en),*Digital representation (en),Digital representation

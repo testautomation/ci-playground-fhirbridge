@@ -1,0 +1,21 @@
+archetype_id,path,rm_type,aom_type,node_id,name_de,name_nb,name_pt-br,name_en
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/,CLUSTER,CComplexObject,at0000,Laboranalyt-Resultat,Analyseresultat,*Laboratory analyte result(en),Laboratory analyte result
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0001],ELEMENT,CComplexObject,at0001,Analyt-Resultat,Analyseresultat,*Analyte result(en),Analyte result
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0003],ELEMENT,CComplexObject,at0003,Kommentar,Kommentar,*Comment(en),Comment
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0003]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0004],ELEMENT,CComplexObject,at0004,Referenzbereichs-Hinweise,Veileder for referanseområde,*Reference range guidance(en),Reference range guidance
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0004]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0005],ELEMENT,CComplexObject,at0005,Ergebnis-Status,Resultatstatus,*Result status(en),Result status
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0005]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0005]/value/defining_code,CODE_PHRASE,CCodePhrase
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0006],ELEMENT,CComplexObject,at0006,Zeitpunkt Ergebnis-Status,Tidsangivelse for resultatstatus,*Result status time(en),Result status time
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0006]/value,DV_DATE_TIME,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0014],CLUSTER,ArchetypeSlot,at0014,Analyseergebnis-Details,Detaljer om analyseresultat,Detalhes do resultado do analito,Analyte result detail
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0024],ELEMENT,CComplexObject,at0024,untersuchter Analyt,Analysenavn,*Analyte name(en),Analyte name
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0024]/value,DV_TEXT,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0025],ELEMENT,CComplexObject,at0025,Zeitpunkt Validation,Tidsangivelse for validering,*Validation time(en),Validation time
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0025]/value,DV_DATE_TIME,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0026],ELEMENT,CComplexObject,at0026,Probe,Prøvemateriale,*Specimen(en),Specimen
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0026]/value,DV_URI,CComplexObject
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0027],ELEMENT,CComplexObject,at0027,Analyseergebnis-Reihenfolge,Resultatrekkefølge,*Analyte result sequence(en),Analyte result sequence
+openEHR-EHR-CLUSTER.laboratory_test_analyte.v1,/items[at0027]/value,DV_COUNT,CComplexObject
