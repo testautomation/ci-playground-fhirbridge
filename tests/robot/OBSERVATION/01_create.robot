@@ -40,8 +40,7 @@ Force Tags              create
 
 	ehr.create new ehr    000_ehr_status.json
 	observation.create body temperature    observation-bodytemp-example.json
-    # observation.validate response - 201
-    observation.validate response - 400    # MAKE IT FAIL TO SEE IF RESULTS ARE SAVED ON CIRCLECI AS ARTIFACTS
+    observation.validate response - 201
 
 
 002 Create Blood Pressure 
