@@ -108,7 +108,8 @@ jobs:
 
     tag-version:
         docker:
-            - image: circleci/openjdk:stretch
+            # - image: circleci/openjdk:stretch
+            - image: cimg/openjdk:11.0.8
         steps:
             - checkout
             - configure-git-for-ci-bot
@@ -133,7 +134,8 @@ jobs:
 
     build_and_deploy:
         docker:
-            - image: circleci/openjdk:11.0.8-jdk
+            # - image: circleci/openjdk:11.0.8-jdk
+            - image: cimg/openjdk:11.0.8
               auth:
                   username: $DOCKER_USER
                   password: $DOCKER_HUB_PASSWORD
