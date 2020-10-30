@@ -1,5 +1,7 @@
 # FHIR Bridge
 
+dummy change
+
 FHIR Bridge is an official component of [EHRbase](https://ehrbase.readthedocs.io/en/latest/index.html) project. 
 The purpose of the application is to act as a broker between an HL7 FHIR client and an openEHR server.
 
@@ -293,13 +295,13 @@ The audit mechanism uses the AuditEvent resource provided by FHIR:
 ```
 In addition, the AuditEvent endpoint is available to search for resources using the following supported criteria:
 
-| Name | Type | Description |
-| --- | --- | --- |
-| action | token |	Type of action performed during the event |
-| date | date | Time when the event was recorded |
-| entity | reference | Specific instance of resource |
-| outcome | token | Whether the event succeeded or failed |
-| type | token | Type/identifier of event |
+| Name    | Type      | Description                               |
+| ------- | --------- | ----------------------------------------- |
+| action  | token     | Type of action performed during the event |
+| date    | date      | Time when the event was recorded          |
+| entity  | reference | Specific instance of resource             |
+| outcome | token     | Whether the event succeeded or failed     |
+| type    | token     | Type/identifier of event                  |
 
 Examples:
 ```
