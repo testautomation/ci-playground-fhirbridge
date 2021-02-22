@@ -1,3 +1,3 @@
 ## FHIR-bridge Test Documentation
 
-body height 100%
+iframe height 800px
