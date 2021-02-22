@@ -32,6 +32,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
+  height: 100%;
 }
 
 #skip-to-content {
@@ -168,7 +169,6 @@ a {
 
   @include large {
     max-width: 64rem;
-    height: 90%;
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem;
