@@ -1,4 +1,5 @@
-# Copyright (c) 2020 P. Wohlfarth (Appsfactory), Wladislaw Wagner (Vitasystems GmbH)
+# Copyright (c) 2020 Peter Wohlfarth (Appsfactory GmbH), Wladislaw Wagner (Vitasystems GmbH),
+# Dave Petzold (Appsfactory GmbH) & Pauline Schulz (Appsfactory GmbH)
 #
 # This file is part of Project EHRbase
 #
@@ -21,7 +22,7 @@ Resource                ${EXECDIR}/robot/_resources/suite_settings.robot
 
 Test Setup              establish preconditions
 
-Force Tags              search
+Force Tags              condition_search
 
 
 
@@ -31,14 +32,21 @@ Force Tags              search
 
 *** Test Cases ***
 001 Search Diagnose Condition
-    [Documentation]     Search Diagnose Condition
+	[Documentation]     1. *CREATE* new EHR record\n\n 
+	...                 2. *LOAD* _create-condition-default.json_\n\n
+	...                 3. *UPDATE* ``Subject - Identifier - value`` with the _UUID:_ ${subject_id} which was created in EHR record\n\n
+    ...                 4. *POST* example JSON to condition endpoint\n\n
+	...                 5. *GET* ``${BASE_URL}/Condition?subject.identifier=${subject_id}`` \n\n
+    ...                 6. *VALIDATE* response status against 200
+    [Tags]              diagnose-condition    valid
 
+    condition.create diagnose condition    create-condition-default.json
     condition.get diagnose condition
 
 
 
 *** Keywords ***
 establish preconditions
-    generic.prepare new request session    Prefer=return=representation
+    generic.prepare new request session     Prefer=return=representation
+    ...									    Authorization=${AUTHORIZATION['Authorization']}
     ehr.create new ehr    000_ehr_status.json
-    condition.create diagnose condition    condition-example.json

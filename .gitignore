@@ -1,27 +1,31 @@
 .idea
-*.iml
 
 target
 
 *-local.yml
-lucene
-
-# VSCode editor settings
-.vscode
-.classpath
-.factorypath
-.project
-.settings
-org.eclipse*
-
+keystore/
 
 # Python
 venv
 *.venv
+.pytest_cache
 
-# Robot Framework
-tests/results
+# Robot Tests
+**results**
+tests/log.html
+tests/output.xml
+tests/report.html
 
+# VSCode
+.classpath
+.factorypath
+.project
+.settings/
+.vscode/**
 
-# unknown
-lucene
+# VSCode REST Client
+# files for local usage only!
+local*.http
+
+fhir-bridge.iml
+src/main/resources/MappingOutput.json

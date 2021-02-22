@@ -1,4 +1,0 @@
-package org.ehrbase.fhirbridge.opt.laborbefundcomposition.definition;
-
-public interface LaboranalytResultatAnalytResultatChoiceOrgEhrbaseEhrEncodeWrappersSnakecase77cf3f8b {
-}

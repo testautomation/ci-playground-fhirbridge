@@ -38,6 +38,12 @@ validate response - 201
     String     response body meta versionId    1
 
 
+validate response - 422 (w/o error message)
+    [Arguments]     ${http_status_code}
+                    Integer     response status    ${http_status_code}
+                    String      response body resourceType    OperationOutcome
+
+
 #                                            .
 #                                          .o8
 #  .ooooo.  oooo d8b  .ooooo.   .oooo.   .o888oo  .ooooo.
@@ -50,11 +56,100 @@ validate response - 201
 
 
 create procedure
-    [Arguments]         ${fhir_resource}
+    [Arguments]         ${example_json}
+    POST /Procedure with ehr reference    Procedure    ${example_json}
 
-    ${payload}          Load JSON From File    ${DATA_SET_PATH_PROCEDURE}/${fhir_resource}
-                        # Output    ${payload}
-                        Update Value To Json    ${payload}    $.subject.reference    urn:uuid:${subject_id}
 
-    &{resp}             POST    ${BASE_URL}/Procedure   body=${payload}
+create radiology procedures
+    [Arguments]         ${text}    ${example_json}
+    POST /Procedure with ehr reference    ${text}    ${example_json}
+
+
+create dialysis
+    [Arguments]         ${text}    ${example_json}
+    POST /Procedure with ehr reference    ${text}    ${example_json}
+
+
+create dialysis with status change
+    [Arguments]         ${text}    ${status}    ${example_json}
+    POST /Procedure with ehr reference with status change    ${text}    ${status}    ${example_json}
+
+
+create prone position
+    [Arguments]         ${text}    ${example_json}
+    POST /Procedure with ehr reference    ${text}    ${example_json}
+
+
+create prone position with status change
+    [Arguments]         ${text}    ${status}    ${example_json}
+    POST /Procedure with ehr reference with status change    ${text}    ${status}    ${example_json}
+
+
+create extracorporeal membrane oxygenation
+    [Arguments]         ${text}    ${example_json}
+    POST /Procedure with ehr reference    ${text}    ${example_json}
+
+
+create extracorporeal membrane oxygenation with status change
+    [Arguments]         ${text}    ${status}    ${example_json}
+    POST /Procedure with ehr reference with status change    ${text}    ${status}    ${example_json}
+
+
+create respiratory therapies
+    [Arguments]         ${text}    ${example_json}
+    POST /Procedure with ehr reference    ${text}    ${example_json}
+
+
+create respiratory therapies with status change
+    [Arguments]         ${text}    ${status}    ${example_json}
+    POST /Procedure with ehr reference with status change    ${text}    ${status}    ${example_json}
+
+
+create apheresis
+    [Arguments]         ${text}    ${example_json}
+    POST /Procedure with ehr reference    ${text}    ${example_json}
+
+
+create apheresis with status change
+    [Arguments]         ${text}    ${status}    ${example_json}
+    POST /Procedure with ehr reference with status change    ${text}    ${status}    ${example_json}
+
+
+#                                   .                    
+#                                 .o8                    
+# oo.ooooo.   .ooooo.   .oooo.o .o888oo                  
+#  888' `88b d88' `88b d88(  "8   888                    
+#  888   888 888   888 `"Y88b.    888                    
+#  888   888 888   888 o.  )88b   888 .                  
+#  888bod8P' `Y8bod8P' 8""888P'   "888"                  
+#  888                                                   
+# o888o                                                  
+#
+# [ VALIDATE POST RESPONSES ]
+
+
+POST /Procedure
+    [Arguments]         ${fhir_resource_name}    ${payload}
+
+    Log To Console      POSTING '${{ $fhir_resource_name.upper() }}' PROCEDURE
+    &{resp}             POST    ${BASE_URL}/Procedure    body=${payload}
                         Output Debug Info To Console
+
+
+POST /Procedure with ehr reference
+    [Arguments]         ${fhir_resource_name}    ${example_json}
+
+    ${payload}          Load JSON From File    ${DATA_SET_PATH_PROCEDURE}/${example_json}
+                        Update Value To Json    ${payload}    $.subject.identifier.value    ${subject_id}
+                        Output Debug Info To Console    ${payload}
+                        POST /Procedure    ${fhir_resource_name}    ${payload}
+
+
+POST /Procedure with ehr reference with status change
+    [Arguments]         ${fhir_resource_name}    ${status}    ${example_json}
+
+    ${payload}          Load JSON From File    ${DATA_SET_PATH_PROCEDURE}/${example_json}
+                        Update Value To Json    ${payload}    $.subject.identifier.value    ${subject_id}
+                        Update Value To Json    ${payload}    $.status                      ${status}
+                        Output Debug Info To Console    ${payload}
+                        POST /Procedure    ${fhir_resource_name}    ${payload}
