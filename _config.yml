@@ -8,3 +8,4 @@ show_downloads: ["true"]
 github:
   log_url: tests/results/log.html
   report_url: tests/results/report.html
+  testdocs_url: tests/results/fhir-bridge-robot-testdocu.html
