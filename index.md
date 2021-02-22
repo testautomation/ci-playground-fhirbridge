@@ -1,9 +1,5 @@
 ## FHIR-bridge Test Documentation
 
-simple text
-
-<p>html text</p>
-
 <style>
     iframe { border: none; }
 </style>
@@ -14,7 +10,3 @@ simple text
     <a href="tests/results/fhir-bridge-robot-testdocu.html">SELFHTML</a>
     </p>
 </iframe>
-
-<div>
-  <p>hallo wlad</p>
-</div>
