@@ -39,7 +39,7 @@ Force Tags              condition_create    create
 	...                 3. *UPDATE* ``Subject - Identifier - value`` with the _UUID:_ ${subject_id} which was created in EHR record\n\n
     ...                 4. *POST* example JSON to condition endpoint\n\n
 	...                 5. *VALIDATE* the response status
-    [Tags]              diagnose-condition    valid
+    [Tags]              diagnose-condition    valid   xxx
 
     ehr.create new ehr    000_ehr_status.json
     condition.create diagnose condition    create-condition-default.json

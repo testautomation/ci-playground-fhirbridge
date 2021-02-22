@@ -38,14 +38,14 @@ workflows:
                 branches:
                     only:
                         - /^(release\/v\d+\.\d+\.\d+|hotfix\/v\d+\.\d+\.\d+)$/
-        - build_and_deploy:
-            context: org-global
-            requires:
-                - build-and-test-fhirbridge
-            filters:
-                branches:
-                    only:
-                        - /^(release\/v\d+\.\d+\.\d+|hotfix\/v\d+\.\d+\.\d+|master|develop)$/
+        # - build_and_deploy:
+        #     context: org-global
+        #     requires:
+        #         - build-and-test-fhirbridge
+        #     filters:
+        #         branches:
+        #             only:
+        #                 - /^(release\/v\d+\.\d+\.\d+|hotfix\/v\d+\.\d+\.\d+|master|develop)$/
 
 
 
@@ -253,7 +253,7 @@ commands:
                 name: BUILD FHIR-BRIDGE
                 command: |
                     ls -la
-                    mvn clean verify -Dmaven.javadoc.skip=true -DskipITs=false
+                    mvn clean verify -Dmaven.javadoc.skip=true -DskipITs=true
 
 
     start-fhirbridge-application:
@@ -336,6 +336,7 @@ commands:
                 command: |
                     cd tests/
                     rebot --outputdir results/1/robot-tests \
+                        -i xxx \
                         -e obsolete -e libtest \
                         --removekeywords for \
                         --removekeywords wuks \
