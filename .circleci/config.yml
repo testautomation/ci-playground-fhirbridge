@@ -189,7 +189,7 @@ jobs:
             - configure-git-for-ci-bot
             - restore-fhirbridge-workspace
             - run:
-                name: OVERWRITE OLD ROBOT FILE AND
+                name: OVERWRITE OLD ROBOT FILES AND PUSH UPDATE TO GH-PAGES BRANCH
                 command: |
                     # ls -la
                     git checkout gh-pages
@@ -200,7 +200,7 @@ jobs:
                     # ls -la
                     # git status
                     git commit -am "Updates Robot Test Documentation Github Page --> https://ehrbase.github.io/fhir-bridge/"
-                    git push --set-upstream origin gh-pages
+                    git push --force --set-upstream origin gh-pages
 
 
 
