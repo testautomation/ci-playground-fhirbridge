@@ -118,6 +118,7 @@ jobs:
             - collect-fhirbridge-integrationtest-results
             - save-fhirbridge-test-results
             - save-jacoco-coverage-report
+            - save-fhirbridge-workspace
             - sonarcloud/scan:
                 cache_version: 1
 
@@ -188,7 +189,10 @@ jobs:
             - restore-fhirbridge-workspace
             - run:
                 command: |
+                    ls -la
                     git checkout gh-pages
+                    git status
+                    ls -la
                     git add fhir-bridge-robot-testdocu.html
                     git add log.html
                     git add report.html
