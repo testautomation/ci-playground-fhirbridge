@@ -9,3 +9,4 @@ github:
   log_url: ./log.html
   report_url: ./report.html
   testdocs_url: ./fhir-bridge-robot-testdocu.html
+  ifr_resizer: ./iframeResizer.min.js

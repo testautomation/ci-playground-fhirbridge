@@ -13,15 +13,6 @@
     {% endif %}
     <meta charset="UTF-8">
 
-    <!-- rezise iFrame based on content inside -->
-    <script type="text/javascript">
-        function resizeIframe(iframe) {
-            var size=iframe.contentWindow.document.body.scrollHeight;
-            var size_new=size+30;
-            iframe.height = size_new + "px";
-        }
-    </script> 
-
 {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
@@ -48,16 +39,26 @@
     <main id="content" class="main-content" role="main">
       {{ content }}
 
-        <style>
+        <!-- <style>
         iframe { border: none; }
+        </style> -->
+        <style>
+            iframe {
+              width: 1px;
+              min-width: 100%;
+            }
         </style>
     
-        <iframe src="{{ site.github.testdocs_url }}" id="testDocs" onload="resizeIframe(this)" width="100%" name="FHIR-bridge test docs">
+        <iframe id="myIframe" src="{{ site.github.testdocs_url }}" scrolling="no name="FHIR-bridge test docs">
             <p>Ihr Browser kann leider keine eingebetteten Frames anzeigen:
             Sie können die eingebettete Seite über den folgenden Verweis aufrufen: 
             <a href="{{ site.github.testdocs_url }}">FHIR-bridge test docs</a>
             </p>
         </iframe>
+        <script type="text/javascript" src="{{ site.github.ifr_resizer }}"></script>
+        <script>
+            iFrameResize({ log: true }, '#myIframe')
+        </script>
 
         <footer class="site-footer">
             {% if site.github.is_project_page %}
