@@ -2,7 +2,7 @@ version: 2.1
 
 # OVERVIEW - What this CI pipeline does:
 #
-# 1. So far this pipeline consists of one workflow only, which
+# 1. This pipeline consists of one workflow, which
 #    - clones ehrbase repo
 #    - builds ehrbase server from develop branch
 #    - starts ehrbase server (postgresql db is included in used docker executor,
@@ -13,6 +13,7 @@ version: 2.1
 #    - performes sonarcloud.io code analysis
 #    - creates a tag and pushes that to Git
 #    - Builds the Docker image and pushes that do DockerHub with appropriate tag
+#    - Deploys Robot Test Documentation to Github-Pages
 
 
 workflows:
@@ -118,6 +119,7 @@ jobs:
             - collect-fhirbridge-integrationtest-results
             - save-fhirbridge-test-results
             - save-jacoco-coverage-report
+            - save-fhirbridge-workspace
             - sonarcloud/scan:
                 cache_version: 1
 
@@ -187,12 +189,17 @@ jobs:
             - configure-git-for-ci-bot
             - restore-fhirbridge-workspace
             - run:
+                name: OVERWRITE OLD ROBOT FILE AND
                 command: |
+                    # ls -la
                     git checkout gh-pages
-                    git add fhir-bridge-robot-testdocu.html
-                    git add log.html
-                    git add report.html
-                    git commit -am "Updates Robot Test Documentation Github Page"
+                    # git status
+                    cp new_fhir-bridge-robot-testdocu.html fhir-bridge-robot-testdocu.html
+                    cp new_log.html log.html
+                    cp new_report.html report.html
+                    # ls -la
+                    # git status
+                    git commit -am "Updates Robot Test Documentation Github Page --> https://ehrbase.github.io/fhir-bridge/"
                     git push --set-upstream origin gh-pages
 
 
@@ -289,18 +296,6 @@ commands:
 
     start-fhirbridge-application:
         steps:
-            # - run:
-            #     name: COPY APPLICATION-CI.yml to ./application.yml
-            #     description: |
-            #         This make Spring Boot load this config when starting fhirbridge .jar
-            #         And is required to start fhirbrige in CI pipeline.
-            #     command: |
-            #         cp src/test/resources/application-ci.yml ./application.yml
-            # - run:
-            #     name: WORKAROUND FOR ISSUE github.com/ehrbase/fhir-bridge/issues/60
-            #     command: |
-            #         rm -rf target/lib/
-            #         ls -la target/
             - run:
                 name: START FHIRBRIDGE APPLICATION
                 background: true
@@ -381,9 +376,9 @@ commands:
             - run:
                 name: GENERATE ROBOT TEST DOCUMENTATION
                 command: |
-                    python3 -m robot.testdoc tests/robot fhir-bridge-robot-testdocu.html
-                    cp tests/results/0/log.html ./log.html
-                    cp tests/results/0/report.html ./report.html
+                    python3 -m robot.testdoc tests/robot new_fhir-bridge-robot-testdocu.html
+                    cp tests/results/0/log.html ./new_log.html
+                    cp tests/results/0/report.html ./new_report.html
             - run:
                 name: COPY ROBOT OUTPUT FILES
                 when: always
