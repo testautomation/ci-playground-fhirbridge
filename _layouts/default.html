@@ -16,18 +16,9 @@
     <!-- rezise iFrame based on content inside -->
     <script type="text/javascript">
         function resizeIframe(iframe) {
-            // on resize
-            this.container = this.frameElement.contentWindow.document.body;
-            this.watch = () => {
-            cancelAnimationFrame(this.watcher);
-
-            if (this.lastScrollHeight !== container.scrollHeight) {
-                parent.resizeIframeToContentSize(this.frameElement);  
-            }
-            this.lastScrollHeight = container.scrollHeight;
-            this.watcher = requestAnimationFrame(this.watch);
-            };
-            this.watcher = window.requestAnimationFrame(this.watch);
+            var size=iframe.contentWindow.document.body.scrollHeight;
+            var size_new=size+30;
+            iframe.height = size_new + "px";
         }
     </script> 
 
