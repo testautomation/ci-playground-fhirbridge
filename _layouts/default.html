@@ -40,8 +40,8 @@
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
       {% if site.show_downloads %}
-        <a href="{{ site.github.log_url }}" class="btn">View log.html</a>
-        <a href="{{ site.github.report_url }}" class="btn">View report.html</a>
+        <a href="{{ site.github.log_url }}" class="btn" target="center_frame">View log.html</a>
+        <a href="{{ site.github.report_url }}" class="btn" target="center_frame">View report.html</a>
       {% endif %}
     </header>
 
@@ -52,7 +52,7 @@
         iframe { border: none; }
         </style>
     
-        <iframe src="{{ site.github.testdocs_url }}" id="testDocs" onload="resizeIframe(this)" width="100%" name="FHIR-bridge test docs">
+        <iframe src="{{ site.github.testdocs_url }}" id="testDocs" onload="resizeIframe(this)" width="100%" name="center_frame">
             <p>Ihr Browser kann leider keine eingebetteten Frames anzeigen:
             Sie können die eingebettete Seite über den folgenden Verweis aufrufen: 
             <a href="{{ site.github.testdocs_url }}">FHIR-bridge test docs</a>
