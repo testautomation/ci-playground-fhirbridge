@@ -9,6 +9,7 @@ keystore/
 venv
 *.venv
 .pytest_cache
+__pycache__/
 
 # Robot Tests
 **results**
