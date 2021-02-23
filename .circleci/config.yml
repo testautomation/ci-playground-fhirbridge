@@ -192,10 +192,11 @@ jobs:
                     ls -la
                     git checkout gh-pages
                     git status
+                    cp new_fhir-bridge-robot-testdocu.html fhir-bridge-robot-testdocu.html
+                    cp new_log.html log.html
+                    cp new_report.html report.html
                     ls -la
-                    git add fhir-bridge-robot-testdocu.html
-                    git add log.html
-                    git add report.html
+                    git status
                     git commit -am "Updates Robot Test Documentation Github Page"
                     git push --set-upstream origin gh-pages
 
@@ -385,9 +386,9 @@ commands:
             - run:
                 name: GENERATE ROBOT TEST DOCUMENTATION
                 command: |
-                    python3 -m robot.testdoc tests/robot fhir-bridge-robot-testdocu.html
-                    cp tests/results/0/log.html ./log.html
-                    cp tests/results/0/report.html ./report.html
+                    python3 -m robot.testdoc tests/robot new_fhir-bridge-robot-testdocu.html
+                    cp tests/results/0/log.html ./new_log.html
+                    cp tests/results/0/report.html ./new_report.html
             - run:
                 name: COPY ROBOT OUTPUT FILES
                 when: always
