@@ -6,6 +6,6 @@ title: [FHIR-bridge test documentation]
 show_downloads: ["true"]
 
 github:
-  log_url: tests/results/log.html
-  report_url: tests/results/report.html
-  testdocs_url: tests/results/fhir-bridge-robot-testdocu.html
+  log_url: tests/log.html
+  report_url: tests/report.html
+  testdocs_url: tests/fhir-bridge-robot-testdocu.html
