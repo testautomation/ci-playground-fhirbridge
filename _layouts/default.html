@@ -13,6 +13,18 @@
     {% endif %}
     <meta charset="UTF-8">
 
+    <!-- rezise iFrame based on content inside -->
+    <script type="text/javascript">
+        function iframeLoaded() {
+            var iFrameID = document.getElementById('testDocs');
+            if(iFrameID) {
+                  // here you can make the height, I delete it first, then I make it again
+                  iFrameID.height = "";
+                  iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+            }   
+        }
+      </script> 
+
 {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
@@ -43,7 +55,7 @@
         iframe { border: none; }
         </style>
     
-        <iframe src="{{ site.github.testdocs_url }}" width="100%" height="800" name="FHIR-bridge test docs">
+        <iframe src="{{ site.github.testdocs_url }}" id="testDocs" onload="iframeLoaded()" name="FHIR-bridge test docs">
             <p>Ihr Browser kann leider keine eingebetteten Frames anzeigen:
             Sie können die eingebettete Seite über den folgenden Verweis aufrufen: 
             <a href="{{ site.github.testdocs_url }}">FHIR-bridge test docs</a>
